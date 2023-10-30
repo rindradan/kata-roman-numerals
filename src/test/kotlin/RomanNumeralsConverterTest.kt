@@ -31,4 +31,10 @@ class RomanNumeralsConverterTest {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.transform(5) shouldBe "V"
     }
+
+    @Test
+    fun `should convert 6 to VI`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.transform(6) shouldBe "VI"
+    }
 }

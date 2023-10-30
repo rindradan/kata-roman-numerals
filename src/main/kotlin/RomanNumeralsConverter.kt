@@ -1,8 +1,9 @@
 class RomanNumeralsConverter {
     fun transform(number: Int): String =
         when (number) {
-            5 -> "V"
             4 -> "IV"
+            5 -> "V"
+            6 -> "VI"
             else -> "I".repeat(number)
         }
 }
