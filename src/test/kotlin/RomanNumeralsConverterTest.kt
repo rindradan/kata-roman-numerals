@@ -20,4 +20,10 @@ class RomanNumeralsConverterTest {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.transform(3) shouldBe "III"
     }
+
+    @Test
+    fun `should convert 4 to IV`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.transform(4) shouldBe "IV"
+    }
 }
