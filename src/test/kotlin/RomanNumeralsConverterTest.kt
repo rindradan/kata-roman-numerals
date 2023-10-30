@@ -85,4 +85,10 @@ class RomanNumeralsConverterTest {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.transform(14) shouldBe "XIV"
     }
+
+    @Test
+    fun `should convert 15 to XV`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.transform(15) shouldBe "XV"
+    }
 }
