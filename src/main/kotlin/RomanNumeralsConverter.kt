@@ -14,9 +14,12 @@ class RomanNumeralsConverter {
         }
 
     private fun Int.transformDecimals() : String =
-        if ((this - 10) >= 0) "X" + (this - 10).transformDecimals()
-        else if ((this - 5) >= 0) "V" + (this - 5).transformDecimals()
-        else ""
+        when {
+            (this - 50) >= 0 -> "L" + (this - 50).transformDecimals()
+            (this - 10) >= 0 -> "X" + (this - 10).transformDecimals()
+            (this - 5) >= 0 -> "V" + (this - 5).transformDecimals()
+            else -> ""
+        }
 
     private fun Int.transformUnits() = "I".repeat(this % 5)
 
