@@ -24,3 +24,8 @@ class RomanNumeralsConverter {
         return numberRepresentation?.let { it.romanValue.name + convert(number - it.arabicValue) } ?: EMPTY
     }
 }
+
+fun main() {
+    val romanNumeralsConverter = RomanNumeralsConverter()
+    println(romanNumeralsConverter.convert(49))
+}
