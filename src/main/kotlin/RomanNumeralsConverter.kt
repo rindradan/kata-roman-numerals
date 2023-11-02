@@ -1,10 +1,8 @@
+import RomanNumeral.*
+
 class RomanNumeralsConverter {
 
     private companion object {
-        const val I = "I"
-        const val V = "V"
-        const val X = "X"
-        const val L = "L"
         const val EMPTY = ""
     }
 
@@ -15,11 +13,11 @@ class RomanNumeralsConverter {
         19 to "XIX",
     )
 
-    private val sortedRomanNumerals = listOf(
-        RomanNumeral(50, L),
-        RomanNumeral(10, X),
-        RomanNumeral(5, V),
-        RomanNumeral(1, I),
+    private val sortedNumberRepresentations = listOf(
+        NumberRepresentation(50, L),
+        NumberRepresentation(10, X),
+        NumberRepresentation(5, V),
+        NumberRepresentation(1, I),
     )
 
     fun convert(number: Int): String? =
@@ -29,8 +27,8 @@ class RomanNumeralsConverter {
         }
 
     private fun Int.toRomanNumeral() : String {
-        val romanNumeral = sortedRomanNumerals.firstOrNull { this - it.arabicValue >= 0 }
-        return romanNumeral?.let { it.romanValue + (this - it.arabicValue).toRomanNumeral() } ?: EMPTY
+        val numberRepresentation = sortedNumberRepresentations.firstOrNull { this >= it.arabicValue }
+        return numberRepresentation?.let { it.romanValue.name + (this - it.arabicValue).toRomanNumeral() } ?: EMPTY
     }
 
     private fun Int.isException() : Boolean = exceptions.containsKey(this)
