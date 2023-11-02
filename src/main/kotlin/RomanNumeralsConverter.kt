@@ -4,6 +4,7 @@ class RomanNumeralsConverter {
         4 to "IV",
         9 to "IX",
         14 to "XIV",
+        19 to "XIX",
     )
 
     fun transform(number: Int): String? =
