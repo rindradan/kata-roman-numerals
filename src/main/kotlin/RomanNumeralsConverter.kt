@@ -15,20 +15,23 @@ class RomanNumeralsConverter {
         19 to "XIX",
     )
 
+    private val sortedRomanNumerals = listOf(
+        RomanNumeral(50, L),
+        RomanNumeral(10, X),
+        RomanNumeral(5, V),
+        RomanNumeral(1, I),
+    )
+
     fun convert(number: Int): String? =
         when {
             number.isException() -> exceptions[number]
-            else -> number.convert()
+            else -> number.toRomanNumeral()
         }
 
-    private fun Int.convert() : String =
-        when {
-            (this - 50) >= 0 -> L + (this - 50).convert()
-            (this - 10) >= 0 -> X + (this - 10).convert()
-            (this -  5) >= 0 -> V + (this -  5).convert()
-            (this -  1) >= 0 -> I + (this -  1).convert()
-            else -> EMPTY
-        }
+    private fun Int.toRomanNumeral() : String {
+        val romanNumeral = sortedRomanNumerals.firstOrNull { this - it.arabicValue >= 0 }
+        return romanNumeral?.let { it.romanValue + (this - it.arabicValue).toRomanNumeral() } ?: EMPTY
+    }
 
     private fun Int.isException() : Boolean = exceptions.containsKey(this)
 }
