@@ -141,6 +141,12 @@ class RomanNumeralsConverterTest {
     }
 
     @Test
+    fun `should convert 40 to XL`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(40) shouldBe "XL"
+    }
+
+    @Test
     fun `should convert 50 to L`() {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.convert(50) shouldBe "L"
