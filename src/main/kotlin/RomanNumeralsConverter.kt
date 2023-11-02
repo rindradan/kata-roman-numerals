@@ -12,12 +12,10 @@ class RomanNumeralsConverter {
             else -> number.transformDecimals() + number.transformUnits()
         }
 
-    private fun Int.transformDecimals() : String = when {
-        this >= 15 -> "X" + "V"
-        this >= 10 -> "X"
-        this >= 5 -> "V"
-        else -> ""
-    }
+    private fun Int.transformDecimals() : String =
+        if ((this - 10) >= 0) "X" + (this - 10).transformDecimals()
+        else if ((this - 5) >= 0) "V" + (this - 5).transformDecimals()
+        else ""
 
     private fun Int.transformUnits() = "I".repeat(this % 5)
 
