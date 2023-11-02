@@ -177,6 +177,12 @@ class RomanNumeralsConverterTest {
     }
 
     @Test
+    fun `should convert 900 to CM`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(900) shouldBe "CM"
+    }
+
+    @Test
     fun `should convert 1000 to M`() {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.convert(1000) shouldBe "M"
