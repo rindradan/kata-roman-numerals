@@ -18,15 +18,15 @@ class RomanNumeralsConverter {
     fun convert(number: Int): String? =
         when {
             number.isException() -> exceptions[number]
-            else -> number.convertDecimals()
+            else -> number.convert()
         }
 
-    private fun Int.convertDecimals() : String =
+    private fun Int.convert() : String =
         when {
-            (this - 50) >= 0 -> L + (this - 50).convertDecimals()
-            (this - 10) >= 0 -> X + (this - 10).convertDecimals()
-            (this -  5) >= 0 -> V + (this -  5).convertDecimals()
-            (this -  1) >= 0 -> I + (this -  1).convertDecimals()
+            (this - 50) >= 0 -> L + (this - 50).convert()
+            (this - 10) >= 0 -> X + (this - 10).convert()
+            (this -  5) >= 0 -> V + (this -  5).convert()
+            (this -  1) >= 0 -> I + (this -  1).convert()
             else -> EMPTY
         }
 
