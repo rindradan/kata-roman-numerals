@@ -165,6 +165,12 @@ class RomanNumeralsConverterTest {
     }
 
     @Test
+    fun `should convert 400 to CD`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(400) shouldBe "CD"
+    }
+
+    @Test
     fun `should convert 500 to D`() {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.convert(500) shouldBe "D"

@@ -9,6 +9,7 @@ class RomanNumeralsConverter {
     private val sortedNumberRepresentations = listOf(
         NumberRepresentation(1000, M),
         NumberRepresentation(500, D),
+        NumberRepresentation(400, CD),
         NumberRepresentation(100, C),
         NumberRepresentation(90, XC),
         NumberRepresentation(50, L),
@@ -28,5 +29,5 @@ class RomanNumeralsConverter {
 
 fun main() {
     val romanNumeralsConverter = RomanNumeralsConverter()
-    println(romanNumeralsConverter.convert(99))
+    println(romanNumeralsConverter.convert(400))
 }
