@@ -129,6 +129,12 @@ class RomanNumeralsConverterTest {
     }
 
     @Test
+    fun `should convert 29 to XXIX`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(29) shouldBe "XXIX"
+    }
+
+    @Test
     fun `should convert 34 to XXXIV`() {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.convert(34) shouldBe "XXXIV"
