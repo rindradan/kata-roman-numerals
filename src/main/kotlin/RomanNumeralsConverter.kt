@@ -14,6 +14,9 @@ class RomanNumeralsConverter {
     )
 
     private val sortedNumberRepresentations = listOf(
+        NumberRepresentation(1000, M),
+        NumberRepresentation(500, D),
+        NumberRepresentation(100, C),
         NumberRepresentation(50, L),
         NumberRepresentation(10, X),
         NumberRepresentation(5, V),

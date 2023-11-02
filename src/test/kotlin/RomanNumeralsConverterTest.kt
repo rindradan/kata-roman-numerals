@@ -127,4 +127,22 @@ class RomanNumeralsConverterTest {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.convert(50) shouldBe "L"
     }
+
+    @Test
+    fun `should convert 100 to C`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(100) shouldBe "C"
+    }
+
+    @Test
+    fun `should convert 500 to D`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(500) shouldBe "D"
+    }
+
+    @Test
+    fun `should convert 1000 to M`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(1000) shouldBe "M"
+    }
 }
