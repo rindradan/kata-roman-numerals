@@ -15,9 +15,9 @@ class RomanNumeralsConverter {
         19 to "XIX",
     )
 
-    fun transform(number: Int): String? =
+    fun convert(number: Int): String? =
         when {
-            isException(number) -> exceptions[number]
+            number.isException() -> exceptions[number]
             else -> number.transformDecimals() + number.transformUnits()
         }
 
@@ -31,5 +31,5 @@ class RomanNumeralsConverter {
 
     private fun Int.transformUnits() = I.repeat(this % 5)
 
-    private fun isException(number: Int) : Boolean = exceptions.containsKey(number)
+    private fun Int.isException() : Boolean = exceptions.containsKey(this)
 }
