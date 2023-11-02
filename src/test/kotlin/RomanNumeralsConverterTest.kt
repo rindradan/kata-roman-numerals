@@ -153,6 +153,12 @@ class RomanNumeralsConverterTest {
     }
 
     @Test
+    fun `should convert 90 to XC`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(90) shouldBe "XC"
+    }
+
+    @Test
     fun `should convert 100 to C`() {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.convert(100) shouldBe "C"

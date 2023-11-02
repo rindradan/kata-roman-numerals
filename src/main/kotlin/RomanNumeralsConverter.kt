@@ -10,6 +10,7 @@ class RomanNumeralsConverter {
         NumberRepresentation(1000, M),
         NumberRepresentation(500, D),
         NumberRepresentation(100, C),
+        NumberRepresentation(90, XC),
         NumberRepresentation(50, L),
         NumberRepresentation(40, XL),
         NumberRepresentation(10, X),
@@ -27,5 +28,5 @@ class RomanNumeralsConverter {
 
 fun main() {
     val romanNumeralsConverter = RomanNumeralsConverter()
-    println(romanNumeralsConverter.convert(49))
+    println(romanNumeralsConverter.convert(99))
 }
