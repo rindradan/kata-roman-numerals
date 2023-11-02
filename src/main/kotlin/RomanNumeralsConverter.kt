@@ -18,7 +18,7 @@ class RomanNumeralsConverter {
     fun convert(number: Int): String? =
         when {
             number.isException() -> exceptions[number]
-            else -> number.convertDecimals() + number.convertUnits()
+            else -> number.convertDecimals()
         }
 
     private fun Int.convertDecimals() : String =
@@ -26,10 +26,9 @@ class RomanNumeralsConverter {
             (this - 50) >= 0 -> L + (this - 50).convertDecimals()
             (this - 10) >= 0 -> X + (this - 10).convertDecimals()
             (this -  5) >= 0 -> V + (this -  5).convertDecimals()
+            (this -  1) >= 0 -> I + (this -  1).convertDecimals()
             else -> EMPTY
         }
-
-    private fun Int.convertUnits() = I.repeat(this % 5)
 
     private fun Int.isException() : Boolean = exceptions.containsKey(this)
 }
