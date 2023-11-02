@@ -4,5 +4,5 @@ internal data class NumberRepresentation(
 )
 
 internal enum class RomanNumeral {
-    I, V, X, L, C, D, M,
+    I, IV, V, X, L, C, D, M,
 }

@@ -123,6 +123,18 @@ class RomanNumeralsConverterTest {
     }
 
     @Test
+    fun `should convert 24 to XXIV`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(24) shouldBe "XXIV"
+    }
+
+    @Test
+    fun `should convert 34 to XXXIV`() {
+        val romanNumeralsConverter = RomanNumeralsConverter()
+        romanNumeralsConverter.convert(34) shouldBe "XXXIV"
+    }
+
+    @Test
     fun `should convert 50 to L`() {
         val romanNumeralsConverter = RomanNumeralsConverter()
         romanNumeralsConverter.convert(50) shouldBe "L"

@@ -7,9 +7,7 @@ class RomanNumeralsConverter {
     }
 
     private val exceptions = mapOf(
-        4 to "IV",
         9 to "IX",
-        14 to "XIV",
         19 to "XIX",
     )
 
@@ -20,6 +18,7 @@ class RomanNumeralsConverter {
         NumberRepresentation(50, L),
         NumberRepresentation(10, X),
         NumberRepresentation(5, V),
+        NumberRepresentation(4, IV),
         NumberRepresentation(1, I),
     )
 
