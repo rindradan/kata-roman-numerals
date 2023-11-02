@@ -4,9 +4,9 @@ class RomanNumeralsConverter {
             number == 4 -> "IV"
             number == 9 -> "IX"
             number == 14 -> "XIV"
-            number >= 15 -> "X" + "V" + "I".repeat(number - 15)
-            number >= 10 -> "X" + "I".repeat(number - 10)
-            number >= 5 -> "V" + "I".repeat(number - 5)
-            else -> "I".repeat(number)
+            number >= 15 -> "X" + "V" + "I".repeat(number % 5)
+            number >= 10 -> "X" + "I".repeat(number % 5)
+            number >= 5 -> "V" + "I".repeat(number % 5)
+            else -> "I".repeat(number % 5)
         }
 }
